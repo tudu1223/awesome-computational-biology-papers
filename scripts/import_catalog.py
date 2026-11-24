@@ -21,19 +21,24 @@ ANCHOR = re.compile(r'^<a name="([a-z-]+)"></a>$')
 DOI = re.compile(r"^10\.\d{4,9}/[^\s<>]+$", re.IGNORECASE)
 KINDS = {"article", "preprint", "review", "conference"}
 VENUE_CASE = {
+    "briefings in bioinformatics": "Briefings in Bioinformatics",
+    "brain research": "Brain Research",
     "bmc bioinformatics": "BMC Bioinformatics",
     "bmc genomics": "BMC Genomics",
     "cell genomics": "Cell Genomics",
+    "cell proliferation": "Cell Proliferation",
     "cell reports": "Cell Reports",
     "elife": "eLife",
     "genome biology": "Genome Biology",
     "genome research": "Genome Research",
+    "interdisciplinary sciences, computational life sciences": "Interdisciplinary Sciences: Computational Life Sciences",
     "molecular systems biology": "Molecular Systems Biology",
     "nature biotechnology": "Nature Biotechnology",
     "nature communications": "Nature Communications",
     "nature genetics": "Nature Genetics",
     "nature methods": "Nature Methods",
     "nature reviews genetics": "Nature Reviews Genetics",
+    "npj digital medicine": "npj Digital Medicine",
     "nucleic acids research": "Nucleic Acids Research",
     "scientific reports": "Scientific Reports",
     "science advances": "Science Advances",
@@ -41,7 +46,10 @@ VENUE_CASE = {
 
 
 def clean(text):
-    return " ".join(html.unescape(text).split()).replace("\\[", "[").replace("\\]", "]")
+    decoded = html.unescape(text)
+    decoded = re.sub(r"</?(?:tt|i|b|em|strong|italic|bold|sub|sup)>", "", decoded, flags=re.IGNORECASE)
+    decoded = re.sub(r"\s+([,:;])", r"\1", " ".join(decoded.split()))
+    return decoded.replace("\\[", "[").replace("\\]", "]")
 
 
 def title_key(title):
