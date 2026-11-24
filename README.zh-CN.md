@@ -2,11 +2,15 @@
 
 [English](README.md) · **简体中文**
 
+[**打开计算生物学文献图谱**](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=zh) · [English site](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=en)
+
+网站现收录 **1,030 篇**，可按需组合筛选，或搜索题名、作者、方法名和 DOI。下方 85 篇导读也同步收录在网站的「精选导读」中。
+
 ![概念插图：DNA、调控网络、细胞与空间组织](assets/cover.png)
 
 一份计算生物学阅读清单，覆盖单细胞与空间组学、扰动响应、调控网络，以及基因组和蛋白质机器学习。每条附一则中文导读和公开来源。
 
-**85 篇论文 · 6 个主题**\
+**85 篇精选导读 · 6 个主题**\
 更新于 2026-11-24，预印本在条目中标记。
 
 ## 主题导航
@@ -271,3 +275,5 @@
 欢迎通过 Issue 或 Pull Request 推荐论文、补充资源或修正链接。请附原始标题、来源链接、拟归入的主题和一句导读。有正式发表版本时请优先提供正式链接。
 
 封面与主题图是为本目录生成的概念插图。目录组织参考了 [OmicsML 的单细胞基础模型论文清单](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers)。
+
+网站由 GitHub Pages 从 `docs/` 发布。[目录数据](docs/data/catalog.json)按条记录，[检索与筛选记录](docs/data/provenance.json)保留了来源信息。可运行 `python -m http.server --directory docs` 在本地预览。

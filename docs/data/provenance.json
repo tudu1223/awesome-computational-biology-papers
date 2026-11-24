@@ -1,0 +1,332 @@
+{
+  "updated": "2026-11-25",
+  "inputs": {
+    "pubmed": [
+      {
+        "accessedOn": "2026-11-24",
+        "sourceName": "PubMed",
+        "sourceEndpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+        "method": "Two ranked samples per title-focused query when the query exceeds one page; filters remove duplicate DOI/title, unsafe/off-topic title patterns, errata, retractions, preprints and records beyond date cutoff. This is a discovery sample, not an exhaustive systematic search. Selected titles received a supplemental manual relevance and scope screen, and cross-topic titles were assigned to their strongest matching topic. Unattributed journal research briefings were excluded after Crossref checks. Individual abstracts and claims were not validated.",
+        "queries": [
+          {
+            "section": "single-cell",
+            "subtype": "Foundation models",
+            "quota": 16,
+            "query": "(\"single cell foundation model\"[Title] OR \"single-cell foundation models\"[Title] OR \"transcriptomic foundation model\"[Title] OR \"single-cell large language model\"[Title]) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 36,
+            "sampledCount": 36,
+            "requests": 1,
+            "titleQualifiedCount": 23,
+            "selectedCount": 16
+          },
+          {
+            "section": "single-cell",
+            "subtype": "Integration and multimodal models",
+            "quota": 20,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title]) AND (\"multi-omics integration\"[Title] OR \"multimodal integration\"[Title] OR \"multimodal single-cell\"[Title] OR \"joint embedding\"[Title] OR \"multiomic integration\"[Title] OR \"data integration\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 199,
+            "sampledCount": 191,
+            "requests": 2,
+            "titleQualifiedCount": 170,
+            "selectedCount": 20
+          },
+          {
+            "section": "single-cell",
+            "subtype": "Cell atlases and data resources",
+            "quota": 20,
+            "query": "(\"cell atlas\"[Title] OR \"single cell atlas\"[Title] OR \"single-cell atlas\"[Title] OR \"single-cell transcriptomic atlas\"[Title]) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 784,
+            "sampledCount": 295,
+            "requests": 2,
+            "titleQualifiedCount": 260,
+            "selectedCount": 20
+          },
+          {
+            "section": "single-cell",
+            "subtype": "Annotation and reference mapping",
+            "quota": 15,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title]) AND (\"cell type annotation\"[Title] OR \"cell-type annotation\"[Title] OR \"cell type identification\"[Title] OR \"reference mapping\"[Title] OR \"cell type prediction\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 107,
+            "sampledCount": 107,
+            "requests": 1,
+            "titleQualifiedCount": 96,
+            "selectedCount": 15
+          },
+          {
+            "section": "perturbation",
+            "subtype": "Response modeling",
+            "quota": 27,
+            "query": "((\"perturbation response prediction\"[Title] OR \"cellular response prediction\"[Title] OR \"single-cell perturbation\"[Title] OR \"genetic perturbation effect\"[Title] OR \"transcriptional outcomes\"[Title] OR \"perturbation effects\"[Title] OR \"virtual cell\"[Title]) AND (predict*[Title] OR simulat*[Title] OR model*[Title] OR benchmark*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 75,
+            "sampledCount": 75,
+            "requests": 1,
+            "titleQualifiedCount": 65,
+            "selectedCount": 27
+          },
+          {
+            "section": "perturbation",
+            "subtype": "Atlases and screening datasets",
+            "quota": 18,
+            "query": "((\"Perturb-seq\"[Title] OR \"sci-Plex\"[Title] OR \"genome-scale perturbation\"[Title] OR \"single-cell CRISPR screening\"[Title] OR \"single-cell perturbation atlas\"[Title] OR \"Connectivity Map\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 164,
+            "sampledCount": 158,
+            "requests": 2,
+            "titleQualifiedCount": 129,
+            "selectedCount": 18
+          },
+          {
+            "section": "perturbation",
+            "subtype": "Response dynamics and cell-state transport",
+            "quota": 12,
+            "query": "((\"single-cell\"[Title] OR \"cellular\"[Title] OR \"cell fate\"[Title]) AND (\"perturbation\"[Title] OR \"optimal transport\"[Title] OR \"cell-state transitions\"[Title] OR \"cell state transitions\"[Title]) AND (predict*[Title] OR transport*[Title] OR simulat*[Title] OR modeling[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 82,
+            "sampledCount": 82,
+            "requests": 1,
+            "titleQualifiedCount": 63,
+            "selectedCount": 12
+          },
+          {
+            "section": "perturbation",
+            "subtype": "Benchmarks and comparisons",
+            "quota": 13,
+            "query": "((\"perturbation\"[Title] OR \"drug response\"[Title]) AND (\"single-cell\"[Title] OR \"gene perturbation\"[Title] OR \"genetic perturbation\"[Title]) AND (benchmark*[Title] OR baselines[Title] OR comparative[Title] OR comparison[Title] OR generali*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 9,
+            "sampledCount": 9,
+            "requests": 1,
+            "titleQualifiedCount": 9,
+            "selectedCount": 4
+          },
+          {
+            "section": "regulation",
+            "subtype": "Network inference and dynamics",
+            "quota": 28,
+            "query": "((\"gene regulatory network inference\"[Title] OR \"gene regulatory network reconstruction\"[Title] OR \"regulatory network inference\"[Title] OR \"gene regulatory networks\"[Title]) AND (\"single-cell\"[Title] OR \"single cell\"[Title] OR \"single-cell\"[Title/Abstract])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 281,
+            "sampledCount": 228,
+            "requests": 2,
+            "titleQualifiedCount": 204,
+            "selectedCount": 28
+          },
+          {
+            "section": "regulation",
+            "subtype": "Enhancer–gene links and cis regulation",
+            "quota": 18,
+            "query": "((\"enhancer-gene\"[Title] OR \"enhancer-target\"[Title] OR \"cis-regulatory\"[Title] OR \"enhancer-promoter\"[Title]) AND (\"single-cell\"[Title] OR \"single cell\"[Title] OR predict*[Title] OR infer*[Title] OR link*[Title] OR connect*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 204,
+            "sampledCount": 169,
+            "requests": 2,
+            "titleQualifiedCount": 160,
+            "selectedCount": 18
+          },
+          {
+            "section": "regulation",
+            "subtype": "Regulons and transcription-factor activity",
+            "quota": 16,
+            "query": "((regulon*[Title] OR \"transcription factor activity\"[Title] OR \"transcription factor network\"[Title] OR \"transcription factor binding\"[Title]) AND (\"single-cell\"[Title] OR \"single cell\"[Title] OR infer*[Title] OR predict*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 298,
+            "sampledCount": 189,
+            "requests": 2,
+            "titleQualifiedCount": 175,
+            "selectedCount": 16
+          },
+          {
+            "section": "regulation",
+            "subtype": "Network resources and evaluation",
+            "quota": 11,
+            "query": "((\"gene regulatory network inference\"[Title] OR \"regulatory network inference\"[Title] OR \"transcription factor target\"[Title]) AND (benchmark*[Title] OR evaluat*[Title] OR resources[Title] OR database[Title] OR compar*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 14,
+            "sampledCount": 14,
+            "requests": 1,
+            "titleQualifiedCount": 13,
+            "selectedCount": 11
+          },
+          {
+            "section": "spatial",
+            "subtype": "Measurement technologies and atlases",
+            "quota": 24,
+            "query": "((\"spatial transcriptomics\"[Title] OR \"spatial transcriptomic\"[Title] OR \"spatially resolved transcriptomics\"[Title] OR \"spatial multiomics\"[Title] OR \"spatial omics\"[Title]) AND (atlas[Title] OR profil*[Title] OR sequenc*[Title] OR \"high resolution\"[Title] OR \"high-resolution\"[Title] OR \"in situ\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 411,
+            "sampledCount": 269,
+            "requests": 2,
+            "titleQualifiedCount": 230,
+            "selectedCount": 24
+          },
+          {
+            "section": "spatial",
+            "subtype": "Domain detection and spatial variation",
+            "quota": 21,
+            "query": "((\"spatial transcriptomics\"[Title] OR \"spatial transcriptomic\"[Title] OR \"spatial omics\"[Title] OR \"spatially resolved transcriptomics\"[Title]) AND (\"spatial domain\"[Title] OR \"spatial domains\"[Title] OR cluster*[Title] OR \"spatially variable genes\"[Title] OR \"spatial variation\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 147,
+            "sampledCount": 147,
+            "requests": 1,
+            "titleQualifiedCount": 136,
+            "selectedCount": 21
+          },
+          {
+            "section": "spatial",
+            "subtype": "Mapping and deconvolution",
+            "quota": 24,
+            "query": "((\"spatial transcriptomics\"[Title] OR \"spatial transcriptomic\"[Title] OR \"spatial omics\"[Title] OR \"spatially resolved transcriptomics\"[Title]) AND (deconvol*[Title] OR \"mapping single-cell\"[Title] OR \"cell type composition\"[Title] OR \"cell-type composition\"[Title] OR integ*[Title] OR imputa*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 481,
+            "sampledCount": 288,
+            "requests": 2,
+            "titleQualifiedCount": 273,
+            "selectedCount": 24
+          },
+          {
+            "section": "spatial",
+            "subtype": "Niches and interactions",
+            "quota": 16,
+            "query": "((\"spatial transcriptomics\"[Title] OR \"spatial transcriptomic\"[Title] OR \"spatial omics\"[Title] OR \"spatially resolved transcriptomics\"[Title]) AND (\"cell-cell interaction\"[Title] OR \"cell-cell communication\"[Title] OR \"intercellular communication\"[Title] OR \"tissue architecture\"[Title] OR niche*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 133,
+            "sampledCount": 133,
+            "requests": 1,
+            "titleQualifiedCount": 111,
+            "selectedCount": 16
+          },
+          {
+            "section": "spatial",
+            "subtype": "Spatial evaluation and best practices",
+            "quota": 14,
+            "query": "((\"spatial transcriptomics\"[Title] OR \"spatial transcriptomic\"[Title] OR \"spatial omics\"[Title]) AND (benchmark*[Title] OR compar*[Title] OR evaluat*[Title] OR \"best practices\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 87,
+            "sampledCount": 87,
+            "requests": 1,
+            "titleQualifiedCount": 69,
+            "selectedCount": 14
+          },
+          {
+            "section": "genomics-proteins",
+            "subtype": "Regulatory genomics models",
+            "quota": 25,
+            "query": "((\"DNA language model\"[Title] OR \"genomic foundation model\"[Title] OR \"DNA foundation model\"[Title] OR \"regulatory variant effect\"[Title] OR \"genomic sequence-to-function\"[Title] OR \"regulatory genomics\"[Title] OR \"gene expression from sequence\"[Title] OR \"DNA sequence to function\"[Title]) AND (model*[Title] OR predict*[Title] OR deep[Title] OR learn*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 35,
+            "sampledCount": 35,
+            "requests": 1,
+            "titleQualifiedCount": 23,
+            "selectedCount": 23
+          },
+          {
+            "section": "genomics-proteins",
+            "subtype": "Reference and variation resources",
+            "quota": 17,
+            "query": "((\"human genome\"[Title] OR \"human genomes\"[Title] OR \"genomic variation\"[Title] OR \"genetic variation\"[Title] OR gnomad[Title] OR \"genome in a bottle\"[Title]) AND (pangenom*[Title] OR telomere*[Title] OR reference[Title] OR benchmark*[Title] OR database[Title] OR \"genome assembly\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 191,
+            "sampledCount": 173,
+            "requests": 2,
+            "titleQualifiedCount": 147,
+            "selectedCount": 17
+          },
+          {
+            "section": "genomics-proteins",
+            "subtype": "Protein structure prediction and assessment",
+            "quota": 18,
+            "query": "((\"protein structure prediction\"[Title] OR \"protein structure database\"[Title] OR \"protein language models\"[Title]) AND (AlphaFold[Title] OR benchmark*[Title] OR \"structural diversity\"[Title] OR predict*[Title] OR evaluat*[Title] OR database[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 796,
+            "sampledCount": 268,
+            "requests": 2,
+            "titleQualifiedCount": 237,
+            "selectedCount": 18
+          },
+          {
+            "section": "genomics-proteins",
+            "subtype": "Protein representation and annotation",
+            "quota": 15,
+            "query": "((\"protein language model\"[Title] OR \"protein language models\"[Title] OR \"protein sequence representation\"[Title]) AND (\"function prediction\"[Title] OR \"variant effects\"[Title] OR \"variant effect\"[Title] OR annotat*[Title] OR represent*[Title] OR embedding*[Title] OR \"fitness prediction\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 86,
+            "sampledCount": 86,
+            "requests": 1,
+            "titleQualifiedCount": 78,
+            "selectedCount": 15
+          },
+          {
+            "section": "genomics-proteins",
+            "subtype": "Protein interactions and complexes",
+            "quota": 11,
+            "query": "((\"protein interactions\"[Title] OR \"protein complexes\"[Title] OR \"protein-protein interactions\"[Title]) AND (\"AlphaFold\"[Title] OR \"protein language model\"[Title] OR benchmark*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 36,
+            "sampledCount": 36,
+            "requests": 1,
+            "titleQualifiedCount": 31,
+            "selectedCount": 11
+          },
+          {
+            "section": "methods",
+            "subtype": "Benchmarking and evaluation design",
+            "quota": 20,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title]) AND (benchmark*[Title] OR comparative[Title] OR \"systematic comparison\"[Title]) AND (\"RNA-seq\"[Title] OR \"analysis\"[Title] OR \"model\"[Title] OR \"models\"[Title] OR \"data integration\"[Title] OR \"differential expression\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 153,
+            "sampledCount": 153,
+            "requests": 2,
+            "titleQualifiedCount": 131,
+            "selectedCount": 20
+          },
+          {
+            "section": "methods",
+            "subtype": "Statistical analysis and differential expression",
+            "quota": 16,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title]) AND (\"differential expression\"[Title] OR \"differential abundance\"[Title] OR \"pseudobulk\"[Title] OR \"pseudoreplication\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 94,
+            "sampledCount": 94,
+            "requests": 1,
+            "titleQualifiedCount": 77,
+            "selectedCount": 16
+          },
+          {
+            "section": "methods",
+            "subtype": "Trajectory, velocity and dynamics",
+            "quota": 18,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title] OR \"RNA velocity\"[Title]) AND (\"trajectory inference\"[Title] OR \"RNA velocity\"[Title] OR \"lineage inference\"[Title] OR \"cell fate probabilities\"[Title] OR pseudotime[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 142,
+            "sampledCount": 142,
+            "requests": 1,
+            "titleQualifiedCount": 127,
+            "selectedCount": 18
+          },
+          {
+            "section": "methods",
+            "subtype": "Gene sets and functional interpretation",
+            "quota": 12,
+            "query": "((\"gene set analysis\"[Title] OR \"gene set enrichment\"[Title] OR \"pathway enrichment\"[Title] OR \"functional enrichment\"[Title]) AND (tool*[Title] OR benchmark*[Title] OR methods[Title] OR analysis[Title] OR test*[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 603,
+            "sampledCount": 233,
+            "requests": 2,
+            "titleQualifiedCount": 217,
+            "selectedCount": 8
+          },
+          {
+            "section": "methods",
+            "subtype": "Data structures and reproducible workflows",
+            "quota": 13,
+            "query": "((\"single-cell\"[Title] OR \"single cell\"[Title]) AND (\"workflow\"[Title] OR \"workflows\"[Title] OR \"data format\"[Title] OR \"data structure\"[Title] OR \"analysis toolkit\"[Title] OR \"best practices\"[Title] OR \"data portal\"[Title])) AND (\"2000/01/01\"[Date - Publication] : \"2026/11/24\"[Date - Publication]) AND english[Language] NOT (Retracted Publication[Publication Type] OR Retraction of Publication[Publication Type] OR Published Erratum[Publication Type] OR Comment[Publication Type] OR Editorial[Publication Type])",
+            "hitCount": 105,
+            "sampledCount": 105,
+            "requests": 1,
+            "titleQualifiedCount": 96,
+            "selectedCount": 0
+          }
+        ]
+      },
+      {
+        "accessedOn": "2026-11-24",
+        "sourceName": "Crossref and PubMed",
+        "method": "Targeted DOI lookup for major open-source single-cell and multimodal tooling and measurement papers. DOI duplicates against the existing seed and PubMed sample omitted."
+      }
+    ],
+    "omicsml": [
+      {
+        "asOf": "2026-11-24",
+        "source": "https://github.com/OmicsML/awesome-foundation-model-single-cell-papers",
+        "license": "MIT",
+        "sourceDigestSha256": "a9c7d808f478c7ff26ae40bcc10459e0f71d3d58377d707f4a361fdcc9fe6a4a",
+        "methods": "Reference list used for candidate discovery. Citation metadata independently resolved via Crossref or arXiv and checked for title alignment. Existing records, duplicate versions, off-scope leads, and unverified identifiers excluded. Original list text and illustrations omitted."
+      }
+    ]
+  },
+  "counts": {
+    "omicsml": 591,
+    "pubmed": 354,
+    "editorial": 85
+  },
+  "deduplication": "Exact DOI or normalized title, preferring published versions when available."
+}

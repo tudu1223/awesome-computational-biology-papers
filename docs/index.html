@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <meta name="description" content="A bilingual literature atlas for computational biology. Search papers, datasets, and benchmarks across six research themes.">
+  <title>Computational Biology Literature Atlas</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:,">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#library" data-text="skip">Skip to the library</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#top" aria-label="Literature Atlas home">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-text="brand">Literature Atlas</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary" data-aria="primaryNav">
+        <a href="#themes" data-text="themesNav">Themes</a>
+        <a href="#library" data-text="libraryNav">Library</a>
+        <a href="#sources" data-text="sourcesNav">Sources</a>
+      </nav>
+      <div class="header-actions">
+        <a class="github-link" href="https://github.com/tudu1223/awesome-computational-biology-papers" data-text="github">GitHub</a>
+        <div class="languages" role="group" aria-label="Language" data-aria="language">
+          <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="section-label" data-text="field">Computational biology</p>
+        <h1 id="hero-title" data-text="heroTitle">A literature atlas</h1>
+        <p class="hero-description" data-text="heroDescription">Find the papers, datasets and benchmarks behind single-cell biology, virtual cells and molecular modeling.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#library" data-text="explore">Explore the library</a>
+          <a class="button secondary" href="#themes" data-text="browse">Browse themes</a>
+        </div>
+        <dl class="hero-stats" id="stats" hidden>
+          <div><dt data-text="papersStat">Papers</dt><dd id="stat-papers"></dd></div>
+          <div><dt data-text="themesStat">Themes</dt><dd id="stat-themes"></dd></div>
+          <div><dt data-text="yearsStat">Publication years</dt><dd id="stat-years"></dd></div>
+        </dl>
+      </div>
+      <figure class="hero-art">
+        <img src="./images/atlas-hero.webp" width="1500" height="1000" fetchpriority="high" alt="" />
+      </figure>
+    </section>
+
+    <section class="themes-section shell" id="themes" aria-labelledby="themes-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label" data-text="themesNav">Themes</p>
+          <h2 id="themes-title" data-text="themesTitle">Explore the field</h2>
+        </div>
+        <p data-text="themesDescription">Choose a theme to browse its methods, resources and related studies.</p>
+      </div>
+      <div class="theme-grid" id="theme-grid"></div>
+    </section>
+
+    <section class="library-section" id="library" aria-labelledby="library-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-label" data-text="libraryNav">Library</p>
+            <h2 id="library-title" data-text="libraryTitle">Find a paper</h2>
+          </div>
+          <p data-text="libraryDescription">Search titles, authors, methods and identifiers, or narrow the catalog using the filters.</p>
+        </div>
+        <div class="filters" role="search" aria-label="Search papers" data-aria="searchLabel">
+          <div class="search-row">
+            <label class="search-wrap" for="query">
+              <span class="search-icon" aria-hidden="true"></span>
+              <span class="sr-only" data-text="searchLabel">Search papers</span>
+              <input id="query" type="search" placeholder="Try scGPT, Perturb-seq, or Nature Methods" data-placeholder="searchPlaceholder" autocomplete="off" spellcheck="false" maxlength="180">
+            </label>
+          </div>
+          <div class="filter-grid">
+            <label><span data-text="themeFilter">Theme</span><select id="theme"></select></label>
+            <label><span data-text="topicFilter">Subtopic</span><select id="subtopic"></select></label>
+            <label><span data-text="yearFilter">Year</span><select id="year"></select></label>
+            <label><span data-text="typeFilter">Type</span><select id="kind"></select></label>
+            <label><span data-text="collectionFilter">Collection</span><select id="collection"></select></label>
+            <label><span data-text="sortFilter">Sort by</span><select id="sort"></select></label>
+          </div>
+        </div>
+        <div class="results-toolbar">
+          <p id="results-count" role="status" aria-live="polite" data-text="loading">Loading the catalog…</p>
+          <button class="text-button" id="reset" type="button" data-text="reset">Clear filters</button>
+        </div>
+        <section class="results" id="results" aria-label="Paper results" data-aria="resultsLabel" aria-busy="true"></section>
+        <nav class="pagination" id="pagination" aria-label="Paper result pages" data-aria="pagesLabel" hidden>
+          <button class="button secondary" id="previous" type="button" data-text="previous">Previous</button>
+          <span id="page-indicator"></span>
+          <button class="button secondary" id="next" type="button" data-text="next">Next</button>
+        </nav>
+        <noscript><p>JavaScript powers search and filters. Read the bilingual starter bibliography on <a href="https://github.com/tudu1223/awesome-computational-biology-papers">GitHub</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section class="sources-section shell" id="sources" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label" data-text="sourcesNav">Sources</p>
+          <h2 id="sources-title" data-text="sourcesTitle">How the atlas is built</h2>
+        </div>
+        <p data-text="sourcesDescription">The reading collection is supplemented by topic-specific discovery. Records link back to their publication sources.</p>
+      </div>
+      <div class="source-grid" id="source-grid"></div>
+      <div class="editorial-note">
+        <p data-text="coverage">Coverage depends on the discovery sources and their indexing dates. The atlas includes bibliographic records and original conceptual illustrations.</p>
+        <p id="updated"></p>
+        <p><a href="./data/provenance.json" data-text="selectionData">View search and selection details</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p data-text="footer">Computational Biology Literature Atlas</p>
+      <div>
+        <a href="https://github.com/tudu1223/awesome-computational-biology-papers/issues" data-text="contribute">Suggest a paper</a>
+        <a href="#sources" data-text="sourcesNav">Sources</a>
+        <a href="#top" data-text="backToTop">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

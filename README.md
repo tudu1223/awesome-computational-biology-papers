@@ -2,11 +2,15 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
+[**Open the Literature Atlas**](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=en) · [打开中文版网站](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=zh)
+
+The website expands this reading list into a searchable, bilingual catalog of 1,030 papers. Browse six themes, combine filters, or search by title, author, method, and DOI. The 85 editorial reading notes below are also available in the site's **Editorial picks** collection.
+
 ![Editorial illustration of DNA, a regulatory network, a cell and spatial tissue](assets/cover.png)
 
 A curated reading list for single-cell and spatial omics, perturbation response, gene regulation, and machine learning for genomics and proteins. Each entry includes a short reading note and a public source.
 
-**85 papers · 6 topics**\
+**85 editorial picks · 6 topics**\
 Updated 2026-11-24. Preprints are labeled in the entries.
 
 ## Browse by topic
@@ -271,3 +275,5 @@ Updated 2026-11-24. Preprints are labeled in the entries.
 Suggest a paper, add a resource, or report a broken link through an issue or pull request. Include the original title, the source link, a suggested topic, and a short reading note. Prefer the published version when available.
 
 The cover and topic illustrations were generated for this list. The catalog structure was inspired by the [OmicsML reading list on single-cell foundation models](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers).
+
+The website is an unbundled static site served from `docs/`. Its [catalog data](docs/data/catalog.json) uses one record per line, and its [provenance](docs/data/provenance.json) describes the discovery batches. Preview it locally with `python -m http.server --directory docs`.
