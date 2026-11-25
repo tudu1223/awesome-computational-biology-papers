@@ -1,5 +1,7 @@
 import { defaults, indexPapers, pageSize, parseFilters, selectPapers } from "./catalog.js";
 import { kinds, sources, themes } from "./taxonomy.js";
+import { mountSubscriptions } from "./subscriptions.js";
+import { element, getLanguage, rememberLanguage, trendUrl } from "./ui.js";
 
 const copy = {
   skip: ["Skip to the library", "跳到文献库"],
@@ -7,6 +9,18 @@ const copy = {
   primaryNav: ["Primary navigation", "主导航"],
   themesNav: ["Themes", "专题"],
   libraryNav: ["Library", "文献库"],
+  trendsNav: ["Trends", "专题趋势"],
+  resultsTrend: ["View topic trends", "查看专题趋势"],
+  subscribeNav: ["Subscribe", "订阅"],
+  subscribeTitle: ["Follow new entries", "订阅新入库文献"],
+  subscribeDescription: ["Choose a theme to follow newly added papers by RSS or email.", "选择专题，通过 RSS 或邮件跟踪新入库文献。"],
+  feedTheme: ["Subscription theme", "订阅专题"],
+  rssLink: ["Open RSS feed", "打开 RSS"],
+  emailLink: ["Subscribe via FeedMail", "通过 FeedMail 邮件订阅"],
+  feedUrl: ["RSS address", "RSS 地址"],
+  copyFeed: ["Copy", "复制"],
+  feedNote: ["Confirm email subscriptions on FeedMail. Its delivery plans and limits apply.", "邮件订阅在 FeedMail 确认，发送频率与额度以该服务为准。"],
+  recentTitle: ["Recently added", "近期入库"],
   sourcesNav: ["Sources", "来源"],
   github: ["GitHub", "GitHub"],
   language: ["Language", "语言"],
@@ -77,28 +91,10 @@ let years = [];
 let filters = { ...defaults };
 let queryFrame;
 
-function getLanguage() {
-  const requested = new URLSearchParams(location.search).get("lang");
-  if (requested === "zh" || requested === "en") return requested;
-  try {
-    const saved = localStorage.getItem("literature-atlas-language");
-    if (saved === "zh" || saved === "en") return saved;
-  } catch {
-    // The language control is still usable with browser storage disabled.
-  }
-  return navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
-}
-
 const local = (pair) => pair[language === "zh" ? 1 : 0];
 const message = (key) => local(copy[key]);
 const formatNumber = (value) => new Intl.NumberFormat(language === "zh" ? "zh-CN" : "en").format(value);
-
-function element(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text) node.textContent = text;
-  return node;
-}
+const renderSubscriptions = mountSubscriptions(local);
 
 function externalLink(label, href, className) {
   const link = element("a", className, label);
@@ -128,6 +124,8 @@ function applyLanguage() {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));
   }
   document.querySelector(".wordmark").setAttribute("aria-label", message("brand"));
+  get("trends-nav").href = get("trends-overview").href = trendUrl(language);
+  renderSubscriptions();
 }
 
 function paramsFor(state) {
@@ -252,6 +250,9 @@ function emptyState(title, detail) {
 }
 
 function renderResults() {
+  const trend = get("results-trend");
+  trend.hidden = !filters.theme;
+  trend.href = trendUrl(language, filters.theme, filters.topic);
   const selected = selectPapers(index, filters);
   const pages = Math.max(1, Math.ceil(selected.length / pageSize));
   filters.page = Math.min(filters.page, pages);
@@ -347,11 +348,7 @@ function wireCatalog() {
 for (const button of languageButtons) {
   button.addEventListener("click", () => {
     language = button.dataset.language;
-    try {
-      localStorage.setItem("literature-atlas-language", language);
-    } catch {
-      // The URL still retains the selected language.
-    }
+    rememberLanguage(language);
     applyLanguage();
     if (data) renderCatalog();
     else if (list.getAttribute("aria-busy") === "false") {

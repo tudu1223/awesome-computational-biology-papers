@@ -4,6 +4,8 @@
 
 [**Open the Literature Atlas**](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=en) · [打开中文版网站](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=zh)
 
+[Topic trends](https://tudu1223.github.io/awesome-computational-biology-papers/topics.html?lang=en) · [RSS and email subscriptions](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=en#subscribe)
+
 The website expands this reading list into a searchable, bilingual catalog of 1,030 papers. Browse six themes, combine filters, or search by title, author, method, and DOI. The 85 editorial reading notes below are also available in the site's **Editorial picks** collection.
 
 ![Editorial illustration of DNA, a regulatory network, a cell and spatial tissue](assets/cover.png)
@@ -276,4 +278,6 @@ Suggest a paper, add a resource, or report a broken link through an issue or pul
 
 The cover and topic illustrations were generated for this list. The catalog structure was inspired by the [OmicsML reading list on single-cell foundation models](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers).
 
-The website is an unbundled static site served from `docs/`. Its [catalog data](docs/data/catalog.json) uses one record per line, and its [provenance](docs/data/provenance.json) describes the discovery batches. Preview it locally with `python -m http.server --directory docs`.
+The website is an unbundled static site deployed by GitHub Actions from `docs/`. Its [catalog data](docs/data/catalog.json) uses one record per line, and its [provenance](docs/data/provenance.json) describes the discovery batches.
+
+To preview, run `node scripts/build_feeds.mjs` with Node.js 24 and the full Git history, then run `python -m http.server --directory docs`. The deploy workflow generates RSS entries from first appearances in committed catalog history. If a formal version changes both a paper's title and DOI, retain its previous DOI as `previousDoi` to preserve the feed item.

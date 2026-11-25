@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <meta name="description" content="Explore the annual publication-year distribution in each theme and subtopic of the Computational Biology Literature Atlas.">
+  <title>Topic trends | Literature Atlas</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:,">
+  <script type="module" src="./topics.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#topic-main" data-text="skip">Skip to topic trends</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" id="home" href="./">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-text="brand">Literature Atlas</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary" id="topic-nav">
+        <a id="home-library" href="./#library" data-text="library">Library</a>
+        <a id="home-subscribe" href="./#subscribe" data-text="subscribe">Subscribe</a>
+      </nav>
+      <div class="languages" role="group" aria-label="Language" id="topic-languages">
+        <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+      </div>
+    </div>
+  </header>
+  <main id="topic-main" class="shell trends-page">
+    <div class="section-heading">
+      <div>
+        <p class="section-label" data-text="title">Topic trends</p>
+        <h1 id="topic-title">Publication years in the catalog</h1>
+      </div>
+      <p data-text="what">Explore the papers collected in each subtopic by their publication year.</p>
+    </div>
+    <div class="filters trend-filters">
+      <div class="filter-grid">
+        <label><span data-text="theme">Theme</span><select id="trend-theme"></select></label>
+        <label><span data-text="subtopic">Subtopic</span><select id="trend-topic"></select></label>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" id="browse-topic" href="./#library" data-text="browse">Browse papers</a>
+        <a class="button secondary" id="subscribe-topic" href="./#subscribe" data-text="subscribeTheme">Subscribe to this theme</a>
+      </div>
+    </div>
+    <p id="trend-status" class="trend-status" role="status" aria-live="polite" data-text="loading">Loading catalog…</p>
+    <section class="trend-panel" id="trend-panel" aria-labelledby="trend-heading" hidden>
+      <h2 id="trend-heading" data-text="chart">Papers by publication year</h2>
+      <p class="trend-method" data-text="method">Counts include all records in this catalog, including preprints. The most recent year can be incomplete. Select a year to open its papers.</p>
+      <div class="trend-scroll">
+        <div class="trend-chart" id="trend-chart"></div>
+      </div>
+      <details class="trend-details">
+        <summary data-text="table">View exact annual counts</summary>
+        <table>
+          <thead><tr><th scope="col" data-text="year">Year</th><th scope="col" data-text="count">Papers</th></tr></thead>
+          <tbody id="trend-rows"></tbody>
+        </table>
+      </details>
+    </section>
+    <noscript><p>JavaScript is required to explore the charts. The <a href="./data/catalog.json">catalog data</a> is available as JSON.</p></noscript>
+  </main>
+</body>
+</html>

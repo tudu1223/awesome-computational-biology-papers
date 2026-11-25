@@ -7,6 +7,7 @@
   <meta name="description" content="A bilingual literature atlas for computational biology. Search papers, datasets, and benchmarks across six research themes.">
   <title>Computational Biology Literature Atlas</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="alternate" type="application/rss+xml" title="Literature Atlas RSS" href="./feeds/all.xml">
   <link rel="icon" href="data:,">
   <script type="module" src="./app.js"></script>
 </head>
@@ -21,6 +22,8 @@
       <nav class="header-nav" aria-label="Primary" data-aria="primaryNav">
         <a href="#themes" data-text="themesNav">Themes</a>
         <a href="#library" data-text="libraryNav">Library</a>
+        <a href="./topics.html" id="trends-nav" data-text="trendsNav">Trends</a>
+        <a href="#subscribe" data-text="subscribeNav">Subscribe</a>
         <a href="#sources" data-text="sourcesNav">Sources</a>
       </nav>
       <div class="header-actions">
@@ -60,7 +63,10 @@
           <p class="section-label" data-text="themesNav">Themes</p>
           <h2 id="themes-title" data-text="themesTitle">Explore the field</h2>
         </div>
-        <p data-text="themesDescription">Choose a theme to browse its methods, resources and related studies.</p>
+        <div class="theme-intro">
+          <p data-text="themesDescription">Choose a theme to browse its methods, resources and related studies.</p>
+          <a id="trends-overview" href="./topics.html" data-text="resultsTrend">View topic trends</a>
+        </div>
       </div>
       <div class="theme-grid" id="theme-grid"></div>
     </section>
@@ -93,7 +99,10 @@
         </div>
         <div class="results-toolbar">
           <p id="results-count" role="status" aria-live="polite" data-text="loading">Loading the catalog…</p>
-          <button class="text-button" id="reset" type="button" data-text="reset">Clear filters</button>
+          <div class="results-actions">
+            <a class="text-button" id="results-trend" href="./topics.html" data-text="resultsTrend" hidden>View topic trends</a>
+            <button class="text-button" id="reset" type="button" data-text="reset">Clear filters</button>
+          </div>
         </div>
         <section class="results" id="results" aria-label="Paper results" data-aria="resultsLabel" aria-busy="true"></section>
         <nav class="pagination" id="pagination" aria-label="Paper result pages" data-aria="pagesLabel" hidden>
@@ -102,6 +111,40 @@
           <button class="button secondary" id="next" type="button" data-text="next">Next</button>
         </nav>
         <noscript><p>JavaScript powers search and filters. Read the bilingual starter bibliography on <a href="https://github.com/tudu1223/awesome-computational-biology-papers">GitHub</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section class="subscribe-section shell" id="subscribe" aria-labelledby="subscribe-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label" data-text="subscribeNav">Subscribe</p>
+          <h2 id="subscribe-title" data-text="subscribeTitle">Follow new entries</h2>
+        </div>
+        <p data-text="subscribeDescription">Choose a theme to follow newly added papers by RSS or email.</p>
+      </div>
+      <div class="subscription-layout">
+        <div class="filters subscription-controls">
+          <div class="filter-grid">
+            <label><span data-text="feedTheme">Subscription theme</span><select id="feed-theme"></select></label>
+          </div>
+          <div class="hero-actions">
+            <a class="button secondary" id="rss-link" href="./feeds/all.xml" data-text="rssLink">Open RSS feed</a>
+            <a class="button primary" id="feedmail-link" target="_blank" rel="noopener noreferrer" data-text="emailLink">Subscribe via FeedMail</a>
+          </div>
+          <div class="feed-address">
+            <label for="rss-address" data-text="feedUrl">RSS address</label>
+            <div class="feed-address-row">
+              <input id="rss-address" type="url" readonly>
+              <button class="button secondary" type="button" id="copy-feed" data-text="copyFeed">Copy</button>
+            </div>
+            <p id="feed-feedback" role="status" aria-live="polite"></p>
+          </div>
+          <p class="feed-note" data-text="feedNote">Confirm email subscriptions on FeedMail. Its delivery plans and limits apply.</p>
+        </div>
+        <section class="recent-panel" aria-labelledby="recent-title">
+          <h3 id="recent-title" data-text="recentTitle">Recently added</h3>
+          <div id="recent-entries"></div>
+        </section>
       </div>
     </section>
 
@@ -127,6 +170,7 @@
       <p data-text="footer">Computational Biology Literature Atlas</p>
       <div>
         <a href="https://github.com/tudu1223/awesome-computational-biology-papers/issues" data-text="contribute">Suggest a paper</a>
+        <a href="#subscribe" data-text="subscribeNav">Subscribe</a>
         <a href="#sources" data-text="sourcesNav">Sources</a>
         <a href="#top" data-text="backToTop">Back to top</a>
       </div>

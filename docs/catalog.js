@@ -5,6 +5,22 @@ export const defaults = {
   q: "", theme: "", topic: "", year: "", kind: "", collection: "", sort: "", page: 1,
 };
 
+export function annualTrend(papers, theme, topic) {
+  const counts = new Map();
+  for (const paper of papers) {
+    if (paper.section !== theme || (topic && paper.topic !== topic)) continue;
+    counts.set(paper.year, (counts.get(paper.year) ?? 0) + 1);
+  }
+  const years = [...counts.keys()].sort((a, b) => a - b);
+  if (!years.length) return [];
+  const firstYear = years[0];
+  const lastYear = Math.max(...papers.map((paper) => paper.year));
+  return Array.from({ length: lastYear - firstYear + 1 }, (_, i) => ({
+    year: firstYear + i,
+    count: counts.get(firstYear + i) ?? 0,
+  }));
+}
+
 export function normalize(text) {
   return text.normalize("NFKD").toLowerCase().replace(/\p{M}/gu, "")
     .replace(/[^\p{L}\p{N}]+/gu, " ").trim();

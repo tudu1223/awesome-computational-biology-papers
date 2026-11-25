@@ -36,6 +36,7 @@ p, figure, dl, dd { margin: 0; }
 .mark i:nth-child(2) { inset: 5px 11px; transform: rotate(35deg); }
 .mark i:nth-child(3) { inset: 5px 11px; transform: rotate(-35deg); }
 .header-nav, .header-actions { display: flex; align-items: center; gap: clamp(0.8rem, 3vw, 2.6rem); }
+.header-nav { gap: clamp(0.7rem, 1.8vw, 2.1rem); }
 .header-nav a, .github-link { color: var(--muted); text-decoration: none; font-size: 0.93rem; font-weight: 590; white-space: nowrap; }
 .header-nav a:hover, .github-link:hover, .text-button:hover { color: var(--green); text-decoration: underline; }
 .header-actions { gap: 1.15rem; }
@@ -122,11 +123,53 @@ h1 { margin: 0; font-size: clamp(3.05rem, 6.8vw, 7rem); line-height: 0.95; }
 .footer-inner > div { display: flex; flex-wrap: wrap; gap: 1rem; }
 .footer-inner a { color: var(--green); }
 
+.theme-intro { color: var(--muted); max-width: 28rem; }
+.theme-intro a, .results-actions a, .trend-details summary { color: var(--green); font-weight: 650; }
+.results-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.25rem 1rem; }
+.subscribe-section { padding-block: 3.3rem 1.1rem; }
+.subscription-layout { display: grid; grid-template-columns: minmax(0, 1.07fr) minmax(0, 1fr); gap: 1rem; }
+.subscription-controls .filter-grid, .trend-filters .filter-grid { margin-top: 0; grid-template-columns: 1fr; }
+.subscription-controls .hero-actions { margin-top: 0.85rem; }
+.feed-address { margin-top: 0.85rem; }
+.feed-address label { color: var(--muted); font-size: 0.875rem; font-weight: 620; }
+.feed-address-row { display: flex; gap: 0.5rem; }
+.feed-address-row input { flex: 1; min-width: 0; padding: 0.45rem; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: var(--paper); }
+.feed-address [role="status"], .feed-note { color: var(--muted); font-size: 0.875rem; margin-top: 0.45rem; }
+.recent-panel { padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+.recent-panel h3 { font: 600 1.45rem var(--serif); margin: 0 0 0.45rem; }
+.recent-list { list-style: none; margin: 0; padding: 0; }
+.recent-list li { border-top: 1px solid var(--line); padding-block: 0.44rem; overflow-wrap: anywhere; }
+.recent-list time { display: block; font-size: 0.875rem; color: var(--muted); }
+.trends-page { padding-block: 3.15rem; }
+.trends-page h1, :lang(zh-CN) .trends-page h1 { font-size: clamp(2.1rem, 4.6vw, 4.3rem); line-height: 1.08; }
+.trend-filters .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.trend-filters .hero-actions { margin-top: 0.8rem; }
+.trend-status { margin: 0.9rem 0; color: var(--green-dark); font-weight: 650; }
+.trend-panel { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: clamp(0.85rem, 2vw, 1.4rem); }
+.trend-panel h2 { margin: 0; font-size: clamp(1.45rem, 3vw, 2.2rem); }
+.trend-method { color: var(--muted); margin-bottom: 1.2rem; }
+.trend-scroll { overflow-x: auto; padding: 1.6rem 0.4rem 0.4rem; }
+.trend-chart { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(2.65rem, 1fr); gap: 0.33rem; }
+.trend-year { display: grid; justify-items: center; gap: 0.24rem; min-width: 0; color: var(--green-dark); text-decoration: none; font-size: 0.875rem; }
+.trend-track { position: relative; display: flex; align-items: end; width: 100%; height: 12rem; background: repeating-linear-gradient(to top, var(--line) 0 1px, transparent 1px 25%); border-bottom: 1px solid var(--line); }
+.trend-fill { width: 100%; height: var(--bar-height); border-radius: 3px 3px 0 0; background: var(--green); }
+.trend-value { position: absolute; inset: auto 0 calc(var(--bar-height) + 0.06rem); text-align: center; color: var(--green-dark); font-size: 0.815rem; font-weight: 650; }
+div.trend-year .trend-value { color: var(--faint); }
+a.trend-year:hover .trend-fill { background: var(--green-dark); }
+.trend-year-label { font-variant-numeric: tabular-nums; }
+.trend-details { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: 0.65rem; }
+.trend-details summary { cursor: pointer; }
+.trend-details table { border-collapse: collapse; max-width: 30rem; width: 100%; margin-top: 0.5rem; }
+.trend-details th, .trend-details td { text-align: left; padding: 0.3rem 0.55rem; border-bottom: 1px solid var(--line); }
+
 @media (max-width: 1050px) {
   .shell { width: calc(100% - 3.5rem); }
   .filter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
+  .subscription-layout { grid-template-columns: minmax(0, 1fr); }
+  .subscribe-section, .trends-page { padding-block: 2rem; }
+  .theme-intro { margin-top: 0.6rem; }
   html { scroll-padding-top: 5rem; }
   .shell { width: calc(100% - 2rem); }
   .header-inner { min-height: 60px; gap: 0.6rem; }

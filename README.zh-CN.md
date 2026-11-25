@@ -4,6 +4,8 @@
 
 [**打开计算生物学文献图谱**](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=zh) · [English site](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=en)
 
+[专题趋势](https://tudu1223.github.io/awesome-computational-biology-papers/topics.html?lang=zh) · [RSS 与邮件订阅](https://tudu1223.github.io/awesome-computational-biology-papers/?lang=zh#subscribe)
+
 网站现收录 **1,030 篇**，可按需组合筛选，或搜索题名、作者、方法名和 DOI。下方 85 篇导读也同步收录在网站的「精选导读」中。
 
 ![概念插图：DNA、调控网络、细胞与空间组织](assets/cover.png)
@@ -276,4 +278,6 @@
 
 封面与主题图是为本目录生成的概念插图。目录组织参考了 [OmicsML 的单细胞基础模型论文清单](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers)。
 
-网站由 GitHub Pages 从 `docs/` 发布。[目录数据](docs/data/catalog.json)按条记录，[检索与筛选记录](docs/data/provenance.json)保留了来源信息。可运行 `python -m http.server --directory docs` 在本地预览。
+GitHub Actions 将 `docs/` 发布到 GitHub Pages。[目录数据](docs/data/catalog.json)按条记录，[检索与筛选记录](docs/data/provenance.json)保留了来源信息。
+
+本地预览时，用 Node.js 24 和完整 Git 历史运行 `node scripts/build_feeds.mjs`，再运行 `python -m http.server --directory docs`。发布流程按条目在目录提交中首次出现的时间生成 RSS。正式版同时更改题名和 DOI 时，请将旧 DOI 保留在 `previousDoi` 字段中，以延续原订阅条目。
